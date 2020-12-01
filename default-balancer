@@ -1,5 +1,4 @@
-http {
-    upstream backend {
+upstream backend {
         server IPFRONT1;
         server IPFRONT2;
     }
@@ -8,5 +7,4 @@ http {
         location / {
             proxy_pass http://frontend/;
         }
-    }
 }
