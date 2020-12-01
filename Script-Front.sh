@@ -5,6 +5,7 @@ set -x
 
 #Clonar repositorio con todos los archivos necesarios
 git clone https://github.com/ivanmp-lm/IAW-Practica-7.git
+cd IAW-Practica-7/
 
 #Actualizar repositorios
 apt update
