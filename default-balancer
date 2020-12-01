@@ -1,0 +1,12 @@
+http {
+    upstream backend {
+        server IPFRONT1;
+        server IPFRONT2;
+    }
+
+    server {
+        location / {
+            proxy_pass http://frontend/;
+        }
+    }
+}
