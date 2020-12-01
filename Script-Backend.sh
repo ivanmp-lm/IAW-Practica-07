@@ -28,9 +28,9 @@ mysql -u root <<< "ALTER USER 'root'@'localhost' IDENTIFIED WITH caching_sha2_pa
 mysql -u root <<< "FLUSH PRIVILEGES;"
 
 #Crear usuarios en MySQL
-mysql -u root <<< "CREATE USER 'ubuntu'@'%' IDENTIFIED BY 'root';"
-mysql -u root <<< "GRANT ALL PRIVILEGES ON '*.*' TO 'ubuntu'@'%';"
-mysql -u root <<< "FLUSH PRIVILEGES;"
+mysql -u root -p$DB_ROOT_PASSWD <<< "CREATE USER 'ubuntu'@'%' IDENTIFIED BY 'root';"
+mysql -u root -p$DB_ROOT_PASSWD <<< "GRANT ALL PRIVILEGES ON '*.*' TO 'ubuntu'@'%';"
+mysql -u root -p$DB_ROOT_PASSWD <<< "FLUSH PRIVILEGES;"
 
 #Clonar repositorio de la aplicación propuesta
 cd /home/ubuntu/
@@ -42,3 +42,5 @@ mysql -u root -p$DB_ROOT_PASSWD < /home/ubuntu/iaw-practica-lamp/db/database.sql
 
 #Eliminar el resto de archivos que no son necesarios
 rm -rf iaw-practica-lamp
+cd /home/ubuntu
+rm -rf IAW-Practica-7/
