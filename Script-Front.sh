@@ -40,3 +40,12 @@ systemctl restart php7.4-fpm
 #Eliminar archivos sobrantes
 cd ..
 rm -r IAW-Practica-7/
+
+#Clonar repositorio de la aplicación propuesta
+cd /var/www/html/
+rm -rf iaw-practica-lamp
+git clone https://github.com/josejuansanchez/iaw-practica-lamp
+mv /var/www/html/iaw-practica-lamp/src/* /var/www/html/
+
+#Eliminar archivos sobrantes
+rm -rf iaw-practica-lamp
