@@ -20,7 +20,7 @@ apt install php-fpm php-mysql -y
 sed -i "s/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/" /etc/php/7.4/fpm/php.ini
 
 #Reiniciar PHP para efectuar los cambios
-systemctl restart php7.4-fpmcp
+systemctl restart php7.4-fpm
 
 #Copiar archivo con la configuración de Nginx
 cp default /etc/nginx/sites-available/
@@ -47,5 +47,5 @@ mv /var/www/html/iaw-practica-lamp/src/* /var/www/html/
 rm -rf iaw-practica-lamp
 
 #Eliminar resto de archivos sobrantes
-cd $home
+cd /home/ubuntu
 rm -r IAW-Practica-7/
