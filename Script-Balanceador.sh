@@ -1,5 +1,10 @@
 #!/bin/bash
 
+#--CAMBIAR LAS IP POR LAS DE LOS FRONT END--
+FRONT1=
+FRONT2=
+#--CAMBIAR LAS IP POR LAS DE LOS FRONT END--
+
 #Mostrar comandos
 set -x
 
@@ -15,6 +20,10 @@ apt install nginx -y
 
 #Copiar archivo con la configuración de Nginx
 cp default /etc/nginx/sites-available/
+
+#Editar archivo default para incluir las IP de los Front-End
+sed -i "s/IPFRONT1/$FRONT1/" /etc/nginx/sites-available/default
+sed -i "s/IPFRONT2/$FRONT2/" /etc/nginx/sites-available/default
 
 #Reiniciar servicio Nginx
 systemctl restart nginx
