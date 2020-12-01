@@ -37,10 +37,6 @@ cp www.conf /etc/php/7.4/fpm/pool.d/www.conf
 #Reiniciar servicio php7.4-fpm para aplicar los cambios
 systemctl restart php7.4-fpm
 
-#Eliminar archivos sobrantes
-cd ..
-rm -r IAW-Practica-7/
-
 #Clonar repositorio de la aplicación propuesta
 cd /var/www/html/
 rm -rf iaw-practica-lamp
@@ -49,3 +45,7 @@ mv /var/www/html/iaw-practica-lamp/src/* /var/www/html/
 
 #Eliminar archivos sobrantes
 rm -rf iaw-practica-lamp
+
+#Eliminar resto de archivos sobrantes
+cd $home
+rm -r IAW-Practica-7/
