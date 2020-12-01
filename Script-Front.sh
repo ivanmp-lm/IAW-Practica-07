@@ -37,4 +37,5 @@ cp www.conf /etc/php/7.4/fpm/pool.d/www.conf
 systemctl restart php7.4-fpm
 
 #Eliminar archivos sobrantes
+cd ..
 rm -r IAW-Practica-7/
