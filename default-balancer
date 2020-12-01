@@ -1,4 +1,4 @@
-upstream backend {
+upstream frontend {
         server IPFRONT1;
         server IPFRONT2;
     }
