@@ -1,4 +1,5 @@
 upstream frontend {
+        least_conn;
         server IPFRONT1;
         server IPFRONT2;
     }
