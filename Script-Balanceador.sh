@@ -27,3 +27,7 @@ sed -i "s/IPFRONT2/$FRONT2/" /etc/nginx/sites-available/default
 
 #Reiniciar servicio Nginx
 systemctl restart nginx
+
+#Eliminar archivos sobrantes
+cd /home/ubuntu
+rm -r IAW-Practica-7/
