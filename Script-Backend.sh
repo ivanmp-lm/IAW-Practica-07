@@ -24,12 +24,12 @@ apt install mysql-server -y
 cp mysqld.cnf /etc/mysql/mysql.conf.d/mysqld.cnf
 
 #Cambiar contraseña en MySQL
-mysql -u root <<< "ALTER USER 'root'@'localhost' IDENTIFIED WITH caching_sha2_password BY '$DB_ROOT_PASSWD';"
-mysql -u root <<< "FLUSH PRIVILEGES;"
+mysql -u root -p$DB_ROOT_PASSWD <<< "ALTER USER 'root'@'localhost' IDENTIFIED WITH caching_sha2_password BY '$DB_ROOT_PASSWD';"
+mysql -u root -p$DB_ROOT_PASSWD <<< "FLUSH PRIVILEGES;"
 
 #Crear usuarios en MySQL
-mysql -u root -p$DB_ROOT_PASSWD <<< "CREATE USER 'ubuntu'@'%' IDENTIFIED BY 'root';"
-mysql -u root -p$DB_ROOT_PASSWD <<< "GRANT ALL PRIVILEGES ON '*.*' TO 'ubuntu'@'%';"
+mysql -u root -p$DB_ROOT_PASSWD <<< "CREATE USER 'ubuntu'@'localhost' IDENTIFIED BY 'root';"
+mysql -u root -p$DB_ROOT_PASSWD <<< "GRANT ALL PRIVILEGES ON *.* TO 'ubuntu'@'localhost';"
 mysql -u root -p$DB_ROOT_PASSWD <<< "FLUSH PRIVILEGES;"
 
 #Clonar repositorio de la aplicación propuesta
