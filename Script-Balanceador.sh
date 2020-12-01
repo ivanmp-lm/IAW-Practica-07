@@ -19,7 +19,7 @@ apt update
 apt install nginx -y
 
 #Copiar archivo con la configuración de Nginx
-cp default /etc/nginx/sites-available/
+cp default-balancer /etc/nginx/sites-available/default
 
 #Editar archivo default para incluir las IP de los Front-End
 sed -i "s/IPFRONT1/$FRONT1/" /etc/nginx/sites-available/default
