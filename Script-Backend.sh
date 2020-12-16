@@ -36,5 +36,4 @@ mysql -u root -p$DB_ROOT_PASSWD < /home/ubuntu/iaw-practica-lamp/db/database.sql
 
 #Eliminar el resto de archivos que no son necesarios
 rm -rf iaw-practica-lamp
-cd /home/ubuntu
 rm -rf IAW-Practica-7/
