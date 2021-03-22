@@ -1,5 +1,9 @@
 #!/bin/bash
 
+#--CAMBIAR LA IP POR LA DEL BACKEND--
+BACKEND=52.55.136.91
+#--CAMBIAR LA IP POR LA DEL BACKEND--
+
 #Mostrar comandos
 set -x
 
@@ -42,10 +46,7 @@ cd /var/www/html/
 rm -rf iaw-practica-lamp
 git clone https://github.com/josejuansanchez/iaw-practica-lamp
 mv /var/www/html/iaw-practica-lamp/src/* /var/www/html/
+sed -i "s/localhost/$BACKEND/" /var/www/html/config.php
 
 #Eliminar archivos sobrantes
 rm -rf iaw-practica-lamp
-
-#Eliminar resto de archivos sobrantes
-cd /home/ubuntu
-rm -r IAW-Practica-7/
